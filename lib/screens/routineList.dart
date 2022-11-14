@@ -72,8 +72,8 @@ class _RoutineListState extends State<RoutineList> {
 
                   {
 
-                //    Get.to(Garab());   Remove Comment
-                    n++;
+                    Get.to(Garab());
+                    //    n++;
                   });},
                     style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
                     child: Row(children: [Container( padding:EdgeInsets.only(left:85),
