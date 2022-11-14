@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'homescreen.dart';
+import 'routineList.dart';
 class loginScreen extends StatelessWidget {
   const loginScreen({Key? key}) : super(key: key);
   @override
@@ -13,7 +14,7 @@ class loginScreen extends StatelessWidget {
 
       Container(
         padding:EdgeInsets.only(top: 550,left: 20,right:20),
-        child: ElevatedButton(onPressed: (){Get.to(homeScreen());},style: ButtonStyle(
+        child: ElevatedButton(onPressed: (){Get.to(RoutineList());},style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6.0),)))
             ,child:Row(children: [Icon(Icons.g_mobiledata_rounded,size:50,),Text("Sign Up With FACEBOOK")],)),

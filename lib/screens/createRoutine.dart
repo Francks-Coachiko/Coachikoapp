@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
+
+import 'excersiseSelction.dart';
 
 class routineCreating extends StatelessWidget {
   const routineCreating({Key? key}) : super(key: key);
@@ -46,7 +49,7 @@ class routineCreating extends StatelessWidget {
               Container(
                 width: 331,
                 padding: EdgeInsets.only(top: 22),
-                child: ElevatedButton(onPressed:(){},style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
+                child: ElevatedButton(onPressed:(){Get.off(excersiseSelction());},style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
                     child: Row(children: [Container( padding:EdgeInsets.only(left:85),
                         child: Icon(CupertinoIcons.plus,color: Colors.white,size: 18,)),
     Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
