@@ -65,25 +65,26 @@ class _RoutineListState extends State<RoutineList> {
 
 
 
-              Container(
-                  width: 331,
-                  padding: EdgeInsets.only(top: 22),
-                  child: ElevatedButton(onPressed:(){setState(()
-
-                  {
-
-                    Get.to(Garab());
-                    //    n++;
-                  });},
-                    style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
-                    child: Row(children: [Container( padding:EdgeInsets.only(left:85),
-                        child: Icon(CupertinoIcons.plus,color: Colors.white,size: 18,)),
-                      Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
 
 
+              Expanded(child:ListView.builder(itemCount:n ,itemBuilder: (context, index) {return customeCircleAvatr() ;},)),
 
-              Scaffold(body:ListView.builder(itemCount:1 ,itemBuilder: (context, index) {return square();},))
 
+              Center(
+                child: Container(
+                    width: 331,
+                    padding: EdgeInsets.only(top: 0),
+                    child: ElevatedButton(onPressed:(){setState(()
+
+                    {
+                      //  Get.to(Garab());
+                      n++;
+                    });},
+                      style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
+                      child: Row(children: [Container( padding:EdgeInsets.only(left:85),
+                          child: Icon(CupertinoIcons.plus,color: Colors.white,size: 18,)),
+                        Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
+              ),
 
             ]
 
@@ -100,3 +101,5 @@ class _RoutineListState extends State<RoutineList> {
 
   }
 }
+//Container(
+//margin: EdgeInsets.only(top: 10,),color: Colors. red,height: 20,width: 450,)
