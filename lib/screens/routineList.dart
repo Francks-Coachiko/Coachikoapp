@@ -1,10 +1,12 @@
 import 'package:coachiko/screens/square.dart';
+import 'package:coachiko/screens/staticWorkoutSelected.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'costumeCircleAvatar.dart';
 import 'excersiseSelction.dart ';
 import 'grab.dart';
+import 'workoutNote.dart';
 
 
 class RoutineList extends StatefulWidget {
@@ -16,7 +18,7 @@ class RoutineList extends StatefulWidget {
 
 class _RoutineListState extends State<RoutineList> {
             int n=1;
-
+            int Sets=1;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle:true,title:Text("Create Routine"),
@@ -33,82 +35,74 @@ class _RoutineListState extends State<RoutineList> {
             child: Text('Save',style: TextStyle(color:Color(0xff2f76d2),)))],
       ),
       body:Container(color: Colors.black,
+
+
+
+
         child: Stack(
           children: [
             Column(children:
             [
 
               Center(
-            child: Container(
-            padding: EdgeInsets.only(top: 8),
-            width: 371,
-            child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(),
-                focusColor: Color(0xff505050),
-                focusedBorder:UnderlineInputBorder(borderSide: BorderSide(color: Color(0xff505050),),),
-                hintStyle: TextStyle(fontSize: 20),
-                hintText: 'Routine title'  )),),),
-              Container(padding: EdgeInsets.only(top:10),child: customeCircleAvatr()),
-              Center(
-                child: Container(
-                  width: 371,
-                  child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(borderSide: BorderSide.none),
-                      disabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
-                      focusColor: Color(0xff505050),
-                      focusedBorder:UnderlineInputBorder(borderSide: BorderSide.none,),
-                     hintStyle: TextStyle(fontSize: 16),
-                      hintText: 'Addd routine notes here'
+            child:
+
+                      Container(
+                          padding: EdgeInsets.only(top: 8),
+                          width: 371,
+                          child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(),
+                          focusColor: Color(0xff505050),
+                          focusedBorder:UnderlineInputBorder(borderSide: BorderSide(color: Color(0xff505050),),),
+                          hintStyle: TextStyle(fontSize: 20),
+                          hintText: 'Routine title'  )),),
+
+
+
+              ),
+              staticWorkoutSelected(),
+
+              SizedBox(width:400,height: 40,child:ListView.builder(itemCount:Sets ,itemBuilder: (context, index)
+              {return Column(children: [workoutNote(),],); },)),
+
+
+
+
+              Padding(
+                padding:EdgeInsets.only(bottom: 0),
+                child:   Column(children: [
+                  Center(
+                    child: Container(
+                        width: 380,
+                        padding: EdgeInsets.only(bottom: 0),
+                        child: ElevatedButton(onPressed:(){setState(()
+
+                        {
+                          Sets++;
+                        });},
+                          style:ElevatedButton.styleFrom(primary: Color(0xff505050),),
+                          child: Row(children: [Container(
+                              padding:EdgeInsets.only(left:128),
+                              child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                            Container(margin:EdgeInsets.only(left:5,),child: Text("Add Set")),],),)),
                   ),
+                  Center(
+                    child: Container(
+                        width: 380,
+                        padding: EdgeInsets.only(top: 0),
+                        child: ElevatedButton(onPressed:(){setState(()
 
-
-    ))),
-
-
-           //   Expanded(child:ListView.builder(itemCount:n ,itemBuilder: (context, index) {return customeCircleAvatr() ;},)),
-
-ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(primary: Colors.black),
-  child:   Container(
-      padding: EdgeInsets.only(left: 15),
-      child: Row(children: [Icon(CupertinoIcons.timer,color:Color(0xff2f76d2),),
-
-        Container(padding: EdgeInsets.only(left: 5),
-      child: Text("Rest Timer: OFF",style: TextStyle(color:Color(0xff2f76d2),fontSize: 16),))
-
-
-      ],)),
-),
-
-
-              Center(
-                child: Container(
-                    width: 380,
-                    padding: EdgeInsets.only(top: 0),
-                    child: ElevatedButton(onPressed:(){setState(()
-
-                    {
-                      //      Get.to(Garab());
-                      n++;
-                    });},
-                      style:ElevatedButton.styleFrom(primary: Color(0xff505050),),
-                      child: Row(children: [Container(
-                          padding:EdgeInsets.only(left:128),
-                          child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
-                        Container(margin:EdgeInsets.only(left:5,),child: Text("Add Set")),],),)),
+                        {
+                          //      Get.to(Garab());
+                          n++;
+                        });},
+                          style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
+                          child: Row(children: [Container( padding:EdgeInsets.only(left:110),
+                              child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                            Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
+                  ),],),
               ),
-              Center(
-                child: Container(
-                    width: 380,
-                    padding: EdgeInsets.only(top: 0),
-                    child: ElevatedButton(onPressed:(){setState(()
 
-                    {
-                  //      Get.to(Garab());
-                      n++;
-                    });},
-                      style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
-                      child: Row(children: [Container( padding:EdgeInsets.only(left:110),
-                          child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
-                        Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
-              ),
+
 
 
             ]
