@@ -13,17 +13,7 @@ class _GarabState extends State<Garab> {
   Widget build(BuildContext context) {
 
 
-    return Stack(
-      children: [
-        Scaffold(appBar: AppBar(actions: [IconButton(onPressed: (){setState(() {n--;
-        });}, icon: LineIcon.minus())
-        ],centerTitle:true,title: IconButton(onPressed: (){setState(() {n++;});}, icon: LineIcon.plus())),
-          body:ListView.builder(itemCount:n ,itemBuilder: (context, index) {return square();},)
-        ),
-
-
-      ],
-    );
+    return Row(children: [],);
 
 
   }

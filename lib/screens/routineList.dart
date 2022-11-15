@@ -63,28 +63,53 @@ class _RoutineListState extends State<RoutineList> {
     ))),
 
 
+           //   Expanded(child:ListView.builder(itemCount:n ,itemBuilder: (context, index) {return customeCircleAvatr() ;},)),
+
+ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(primary: Colors.black),
+  child:   Container(
+      padding: EdgeInsets.only(left: 15),
+      child: Row(children: [Icon(CupertinoIcons.timer,color:Color(0xff2f76d2),),
+
+        Container(padding: EdgeInsets.only(left: 5),
+      child: Text("Rest Timer: OFF",style: TextStyle(color:Color(0xff2f76d2),fontSize: 16),))
 
 
-
-
-              Expanded(child:ListView.builder(itemCount:n ,itemBuilder: (context, index) {return customeCircleAvatr() ;},)),
+      ],)),
+),
 
 
               Center(
                 child: Container(
-                    width: 331,
+                    width: 380,
                     padding: EdgeInsets.only(top: 0),
                     child: ElevatedButton(onPressed:(){setState(()
 
                     {
-                      //  Get.to(Garab());
+                      //      Get.to(Garab());
+                      n++;
+                    });},
+                      style:ElevatedButton.styleFrom(primary: Color(0xff505050),),
+                      child: Row(children: [Container(
+                          padding:EdgeInsets.only(left:128),
+                          child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                        Container(margin:EdgeInsets.only(left:5,),child: Text("Add Set")),],),)),
+              ),
+              Center(
+                child: Container(
+                    width: 380,
+                    padding: EdgeInsets.only(top: 0),
+                    child: ElevatedButton(onPressed:(){setState(()
+
+                    {
+                  //      Get.to(Garab());
                       n++;
                     });},
                       style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
-                      child: Row(children: [Container( padding:EdgeInsets.only(left:85),
-                          child: Icon(CupertinoIcons.plus,color: Colors.white,size: 18,)),
+                      child: Row(children: [Container( padding:EdgeInsets.only(left:110),
+                          child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
                         Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
               ),
+
 
             ]
 
