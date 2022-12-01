@@ -65,7 +65,8 @@ class excersiseSelction extends StatelessWidget {
 
 
       Column(children: [
-    Container(padding:EdgeInsets.only(top: 170,),child: customeCircleAvatrButton()),
+    Container(padding:EdgeInsets.only(top: 170,),
+        child: customeCircleAvatrButton()),
         customeCircleAvatrButton(),
         customeCircleAvatrButton(),
     ],

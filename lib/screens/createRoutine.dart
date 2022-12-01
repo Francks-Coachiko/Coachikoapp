@@ -42,7 +42,7 @@ class routineCreating extends StatelessWidget {
                   child: Icon(LineIcons.dumbbell,size: 65,color: Color(0xff2f76d2),)),
 
               Container(padding:EdgeInsets.only(top: 15),
-                child: Column(children: [ Text('Gett started by adding excersise to your ',style: TextStyle(color:Color(0xff505050),fontSize: 17, ),),
+                child: Column(children: [ Text('Get started by adding excersise to your ',style: TextStyle(color:Color(0xff505050),fontSize: 17, ),),
                   Text('routine.',style: TextStyle(color:Color(0xff505050),fontSize: 17, ),)],),),
 
 
