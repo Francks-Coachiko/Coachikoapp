@@ -1,7 +1,11 @@
+import 'package:coachiko/screens/workoutNote.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import 'costumeCircleAvatar.dart';
+import 'grab.dart';
 
 class staticWorkoutSelected extends StatelessWidget {
 
@@ -39,9 +43,64 @@ class staticWorkoutSelected extends StatelessWidget {
       ],),],);
 
 
-
-
-
   }}
+class Buttons2 extends StatefulWidget {
+  const Buttons2({Key? key}) : super(key: key);
 
+  @override
+  State<Buttons2> createState() => _Buttons2State();
+}
 
+class _Buttons2State extends State<Buttons2> {
+  @override
+int  Sets=0;
+  Widget build(BuildContext context) {
+    return Column(children:
+    [
+      Center(
+        child: Container(
+            width: 380,
+            padding: EdgeInsets.only(bottom: 0),
+            child: ElevatedButton(onPressed:(){setState(()
+
+            {
+
+              Sets++;
+            });},
+              style:ElevatedButton.styleFrom(primary: Color(0xff505050),),
+              child: Row(children: [Container(
+                  padding:EdgeInsets.only(left:128),
+                  child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                Container(margin:EdgeInsets.only(left:5,),child: Text("Add Set")),],),)),
+      ),
+      Center(
+        child: Container(
+            width: 380,
+            padding: EdgeInsets.only(top: 0),
+            child: ElevatedButton(onPressed:(){setState(()
+
+            {
+              Get.to(Garab());
+//n++;
+            });},
+              style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
+              child: Row(children: [Container( padding:EdgeInsets.only(left:110),
+                  child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
+      ),
+    ],
+    );}
+}
+
+class NoteBulderr extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return
+      SizedBox(height:(Sets*45)+50,
+        child: ListView.builder(physics:NeverScrollableScrollPhysics(),itemCount:Sets ,itemBuilder:(context, index)
+        {return Column(children: [workoutNote(),],); },),);
+  }
+}
+
+final Sets =1;

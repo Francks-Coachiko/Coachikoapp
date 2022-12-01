@@ -3,6 +3,7 @@ import 'package:coachiko/screens/staticWorkoutSelected.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:line_icons/line_icon.dart';
 import 'costumeCircleAvatar.dart';
 import 'excersiseSelction.dart ';
 import 'grab.dart';
@@ -17,10 +18,14 @@ class RoutineList extends StatefulWidget {
 }
 
 class _RoutineListState extends State<RoutineList> {
-            int n=1;
-            int Sets=1;
+
+
+ List<workoutNote> Note = [workoutNote(),workoutNote(),workoutNote()];
+      @override
+      double s=60.0;
+        int Sets=1;
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.black,
       appBar: AppBar(centerTitle:true,title:Text("Create Routine"),
         backgroundColor:Color(0xff1c1c1e),
         leading: ElevatedButton(onPressed: (){},
@@ -34,91 +39,97 @@ class _RoutineListState extends State<RoutineList> {
             style: ElevatedButton.styleFrom(primary: Color(0xff1c1c1e),),
             child: Text('Save',style: TextStyle(color:Color(0xff2f76d2),)))],
       ),
-      body:Container(color: Colors.black,
+      body:Column(children:
+          [
+            Center(
+              child:
+              Container(
+                padding: EdgeInsets.only(top: 8),
+                width: 371,
+                child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(),
+                    focusColor: Color(0xff505050),
+                    focusedBorder:UnderlineInputBorder(borderSide: BorderSide(color: Color(0xff505050),),),
+                    hintStyle: TextStyle(fontSize: 20),
+                    hintText: 'Routine title'  )),),
+            ),
+            staticWorkoutSelected(),
 
 
 
 
-        child: Stack(
-          children: [
-            Column(children:
-            [
 
-              Center(
-            child:
+            SizedBox(height:(Sets*45)+50,
+              child: ListView.builder(physics:NeverScrollableScrollPhysics(),itemCount:Sets ,itemBuilder:(context, index)
+              {return Column(children: [
+              SizedBox(
+              child: Row(children: [
+              Container(padding:EdgeInsets.only(left: 23),child: Text("${Sets}")),
+              Container(
+              padding: EdgeInsets.only(left: 85),
+              width: 150,
+              child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(borderSide: BorderSide.none),
+              focusedBorder:UnderlineInputBorder(borderSide: BorderSide.none,),
+              hintStyle: TextStyle(fontSize: 22),
+              hintText: '-'  )),),
+              Container(
+              padding: EdgeInsets.only(left: 35),
+              width: 200,
+              child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(borderSide: BorderSide.none),
+              focusedBorder:UnderlineInputBorder(borderSide: BorderSide.none,),
+              hintStyle: TextStyle(fontSize: 22),
+              hintText: '-'  )),),
 
-                      Container(
-                          padding: EdgeInsets.only(top: 8),
-                          width: 371,
-                          child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(),
-                          focusColor: Color(0xff505050),
-                          focusedBorder:UnderlineInputBorder(borderSide: BorderSide(color: Color(0xff505050),),),
-                          hintStyle: TextStyle(fontSize: 20),
-                          hintText: 'Routine title'  )),),
+              ],),
+                )],); },),),
 
+            Padding(
+              padding:EdgeInsets.only(bottom: 0),
+              child:Column(children:
+              [
+                Center(
+                  child: Container(
+                      width: 380,
+                      padding: EdgeInsets.only(bottom: 0),
+                      child: ElevatedButton(onPressed:(){setState(()
 
+                      {
+                        Sets++;
+                      });},
+                        style:ElevatedButton.styleFrom(primary: Color(0xff505050),),
+                        child: Row(children: [Container(
+                            padding:EdgeInsets.only(left:128),
+                            child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                          Container(margin:EdgeInsets.only(left:5,),child: Text("Add Set")),],),)),
+                ),
+                Center(
+                  child: Container(
+                      width: 380,
+                      padding: EdgeInsets.only(top: 0),
+                      child: ElevatedButton(onPressed:(){setState(()
 
-              ),
-              staticWorkoutSelected(),
-
-              SizedBox(width:400,height: 40,child:ListView.builder(itemCount:Sets ,itemBuilder: (context, index)
-              {return Column(children: [workoutNote(),],); },)),
-
-
-
-
-              Padding(
-                padding:EdgeInsets.only(bottom: 0),
-                child:   Column(children: [
-                  Center(
-                    child: Container(
-                        width: 380,
-                        padding: EdgeInsets.only(bottom: 0),
-                        child: ElevatedButton(onPressed:(){setState(()
-
-                        {
-                          Sets++;
-                        });},
-                          style:ElevatedButton.styleFrom(primary: Color(0xff505050),),
-                          child: Row(children: [Container(
-                              padding:EdgeInsets.only(left:128),
-                              child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
-                            Container(margin:EdgeInsets.only(left:5,),child: Text("Add Set")),],),)),
-                  ),
-                  Center(
-                    child: Container(
-                        width: 380,
-                        padding: EdgeInsets.only(top: 0),
-                        child: ElevatedButton(onPressed:(){setState(()
-
-                        {
-                          //      Get.to(Garab());
-                          n++;
-                        });},
-                          style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
-                          child: Row(children: [Container( padding:EdgeInsets.only(left:110),
-                              child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
-                            Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
-                  ),],),
-              ),
-
-
-
-
-            ]
-
-
-
-
+                      {
+                        //   Get.to(Garab());
+//n++;
+                      });},
+                        style:ElevatedButton.styleFrom(primary: Color(0xff2f76d2),),
+                        child: Row(children: [Container( padding:EdgeInsets.only(left:110),
+                            child: Icon(CupertinoIcons.plus,color: Colors.white,size: 22,)),
+                          Container(margin:EdgeInsets.only(left:5,),child: Text("Add excersise")),],),)),
+                ),
+              ],),
             ),
 
+            Spacer(),
+            //    Expanded(child: AnimatedList(itemBuilder: (context, index, animation) {return Note[0]; },)),
 
 
-          ],
-        )));
+          ]),
+
+       // bottomNavigationBar:
+                 //extendBody: true,
+
+    );
 
 
   }
 }
-//Container(
-//margin: EdgeInsets.only(top: 10,),color: Colors. red,height: 20,width: 450,)

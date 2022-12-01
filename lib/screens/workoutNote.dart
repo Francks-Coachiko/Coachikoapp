@@ -7,31 +7,12 @@ class workoutNote extends StatefulWidget {
 }
 
 class _workoutNoteState extends State<workoutNote> {
-  int Sets=1;
+   int Sets=1;
+
 
   @override
   Widget build(BuildContext context) {
-    return
-        SizedBox(
-          child: Row(children: [
-            Container(padding:EdgeInsets.only(left: 23),child: Text("${Sets}")),
-            Container(
-              padding: EdgeInsets.only(left: 85),
-              width: 150,
-              child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(borderSide: BorderSide.none),
-                  focusedBorder:UnderlineInputBorder(borderSide: BorderSide.none,),
-                  hintStyle: TextStyle(fontSize: 22),
-                  hintText: '-'  )),),
-            Container(
-              padding: EdgeInsets.only(left: 35),
-              width: 200,
-              child: TextField( decoration: InputDecoration(border: UnderlineInputBorder(borderSide: BorderSide.none),
-                  focusedBorder:UnderlineInputBorder(borderSide: BorderSide.none,),
-                  hintStyle: TextStyle(fontSize: 22),
-                  hintText: '-'  )),),
-
-          ],),
-        );
+    return Container();
 
    //   ],);
   }
@@ -81,3 +62,7 @@ class _ButtonState extends State<Button> {
       ),],);
   }
 }
+
+
+
+
